@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Super Hero Registration</title>
+    <script type = "text/javascript" src="/vendors/angular.min.js"></script>
+    <script type = "text/javascript" src="/vendors/angular-route.min.js"></script>
+		<script type = "text/javascript" src="/scripts/app.js"></script>
+		<script type = "text/javascript" src="/scripts/controllers/herocontroller.js"></script>
+		<script type = "text/javascript" src="/scripts/controllers/displaycontroller.js"></script>
+
+
+
+
+	</head>
+	<body ng-app="heroApp">
+<div ng-view></div>
+<header><h1>Super Hero Registration</h1></header>
+
+		<div>
+			<div ng-include="'/views/partials/nav.html'">
+			</div>
+				<section id ="heroSubmission" class = "row">
+					<h2>Register Here</h2>
+						<form id = "heroForm">
+					<div class = "five columns">
+
+						<label for="alias">Alias:</label>
+						<input type = "text" id = "currentAlias" name="alias" ng-model="alias"/>
+					</div>
+
+					<div class = "five columns">
+						<label for="first_name">First Name:</label>
+						<input type = "text" id = "currentFirstName" name="first_name" ng-model="first_name"/>
+					</div>
+
+					<div class = "five columns">
+						<label for="last_name">Last Name:</label>
+						<input type = "text" id = "currentLastName" name="last_name" ng-model="last_name"/>
+					</div>
+
+					<div class = "five columns">
+						<label for="city">City:</label>
+						<input type = "text" id = "currentCity" name="city_name" ng-model="city_name"/>
+					</div>
+
+					<div class = "five columns">
+						<label for="power_name">Power Name:</label>
+						<input type = "text" id = "currentPowerName" name="power_name" ng-model="power_name"/>
+					</div>
+
+				 <select class="btn btn-default dropdown-toggle btn-lg" ng-options="powers.display for heroes in types" ng-change="getHeroes()" ng-model="selectedType"></select>
+
+				</form>
+				 </section>
+
+		</div>
+
+
+	</body>
+</html>
