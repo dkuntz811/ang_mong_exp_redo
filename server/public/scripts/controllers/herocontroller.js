@@ -2,7 +2,7 @@ heroApp.controller('heroController', ['$scope', '$http', function($scope, $http)
 	console.log('heroController running');
 	$scope.power=[];
 	$scope.powerType = '';
-	$scope.hero={};
+	$scope.newHero={};
 
 
 
@@ -22,7 +22,7 @@ heroApp.controller('heroController', ['$scope', '$http', function($scope, $http)
 		var data = $scope.newHero;
 		$http.post('/create', data)
 		.then(function(){
-			console.log('POST /heros', data);
+			console.log('POST /heroes', data);
 			getHeroes();
 		});
 	};
@@ -32,7 +32,7 @@ heroApp.controller('heroController', ['$scope', '$http', function($scope, $http)
 	function getHeroes(){
 		$http.get('/gethero')
 		.then(function (response){
-			console.log('GET /heros', response.data);
+			console.log('GET /heroes', response.data);
 
 			var heroDataArray = response.data;
 			heroDataArray.forEach(function (hero){
@@ -43,4 +43,4 @@ heroApp.controller('heroController', ['$scope', '$http', function($scope, $http)
 	}
 
 
-}])
+}]);

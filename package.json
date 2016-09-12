@@ -1,7 +1,7 @@
 {
   "name": "ang_mongo_exp_redo",
   "version": "1.0.0",
-  "description": "",
+  "description": "retake of Angular, Mongo, Express assessment",
   "main": "app.js",
   "scripts": {
     "start": "node server/app.js",
