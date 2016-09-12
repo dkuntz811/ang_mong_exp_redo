@@ -1,2 +1,41 @@
 <div class="container">
-	
+
+
+			<section id ="heroSubmission" class = "row">
+				<h2>Register Here</h2>
+					<form id = "heroForm">
+				<div class = "five columns">
+
+					<label for="alias">Alias:</label>
+					<input type = "text" id = "currentAlias" name="alias" ng-model="alias"/>
+				</div>
+
+				<div class = "five columns">
+					<label for="first_name">First Name:</label>
+					<input type = "text" id = "currentFirstName" name="first_name" ng-model="first_name"/>
+				</div>
+
+				<div class = "five columns">
+					<label for="last_name">Last Name:</label>
+					<input type = "text" id = "currentLastName" name="last_name" ng-model="last_name"/>
+				</div>
+
+				<div class = "five columns">
+					<label for="city">City:</label>
+					<input type = "text" id = "currentCity" name="city_name" ng-model="city_name"/>
+				</div>
+
+				<div class = "five columns">
+					<label for="power_name">Power Name:</label>
+						<select class="btn btn-default dropdown-toggle btn-lg" ng-model = "selectedPower" >
+							<option ng-repeat = "power in powers" value = "{{power.type}}">{{power.display}}</option>
+						</select>
+						<button ng-click="submitNewHero()">Submit</button>
+
+				</div>
+
+
+			</form>
+			 </section>
+
+	</div>

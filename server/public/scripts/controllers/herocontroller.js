@@ -1,8 +1,10 @@
 heroApp.controller('heroController', ['$scope', '$http', function($scope, $http){
 	console.log('heroController running');
-	$scope.powers={};
-	$scope.heroType='';
-	$scope.heroes=[];
+	$scope.power=[];
+	$scope.powerType = '';
+	$scope.hero={};
+
+
 
 	$scope.powers = [
 		{type: "invisibility", display: "Invisibility"},
@@ -16,8 +18,19 @@ heroApp.controller('heroController', ['$scope', '$http', function($scope, $http)
 
 	];
 
+	$scope.submitNewHero = function (){
+		var data = $scope.newHero;
+		$http.post('/create', data)
+		.then(function(){
+			console.log('POST /heros', data);
+			getHeroes();
+		});
+	};
+
+
+
 	function getHeroes(){
-		$http.get('/heros')
+		$http.get('/gethero')
 		.then(function (response){
 			console.log('GET /heros', response.data);
 
